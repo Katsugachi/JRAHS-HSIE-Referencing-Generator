@@ -428,7 +428,7 @@
   <div class="header-inner">
     <div class="school-tag">James Ruse Agricultural High School · HSIE</div>
     <h1><span>Reference</span> Generator</h1>
-    <p class="header-sub">HSIE 2026 Referencing Guideline Accurate - Human Checked - Service Worker Does NOT Work On School Wifi</p>
+    <p class="header-sub">James Ruse HSIE Referencing Guidelines Accurate</p>
     <nav class="header-nav">
       <button class="tab-btn active" onclick="switchTab('single')">Single URL</button>
       <button class="tab-btn" onclick="switchTab('batch')">Batch / Paste Text</button>
@@ -603,9 +603,6 @@
 
 const WORKER_URL = 'https://hsie.adriankatsugachi.workers.dev/';
 
-// Fallback CORS proxy (public, for development only)
-const CORS_PROXY = 'https://corsproxy.io/?';
-
 // ══════════════════════════════════════════════
 //  TAB SWITCHING
 // ══════════════════════════════════════════════
@@ -628,22 +625,87 @@ function selectType(el) {
 // ══════════════════════════════════════════════
 
 async function fetchMeta(url) {
-  // Try worker first
+  // ── Tier 1: Cloudflare Worker (best results, full scrape + CrossRef) ──
   try {
-    const res = await fetch(WORKER_URL + '?url=' + encodeURIComponent(url));
-    if (res.ok) return await res.json();
+    const res = await fetch(WORKER_URL + '?url=' + encodeURIComponent(url), { signal: AbortSignal.timeout(8000) });
+    if (res.ok) {
+      const data = await res.json();
+      data._source = 'worker';
+      return data;
+    }
   } catch(e) {}
 
-  // Fallback: CORS proxy + parse HTML
+  // Worker failed — flag it so callers can warn the user
+  const workerBlocked = true;
+
+  // ── Tier 2: CrossRef direct (for journal/DOI URLs — works even when worker is blocked) ──
   try {
-    const res = await fetch(CORS_PROXY + encodeURIComponent(url));
-    if (!res.ok) throw new Error('fetch failed');
-    const html = await res.text();
-    return parseMetaFromHTML(html, url);
-  } catch(e) {
-    // Return minimal info from URL itself
-    return parseFromURL(url);
-  }
+    const doiMatch = url.match(/doi\.org\/(.+)/i) || url.match(/(10\.\d{4,9}\/[^\s"'<>?#]+)/i);
+    if (doiMatch) {
+      const doi = doiMatch[1].replace(/[.,;)]+$/, '');
+      const apiRes = await fetch(`https://api.crossref.org/works/${doi}`, { signal: AbortSignal.timeout(6000) });
+      if (apiRes.ok) {
+        const item = (await apiRes.json()).message;
+        const monthNum = item.published?.['date-parts']?.[0]?.[1];
+        return {
+          _source: 'crossref', _workerBlocked: true,
+          url,
+          title: item.title?.[0] || null,
+          author: item.author?.map(a => `${a.family}, ${a.given?.charAt(0)}.`).join('; ') || null,
+          year: item.published?.['date-parts']?.[0]?.[0] || null,
+          month: monthNum ? new Date(0, monthNum - 1).toLocaleString('en-US', { month: 'long' }) : null,
+          siteName: item['container-title']?.[0] || null,
+          type: 'journal',
+          volume: item.volume || null,
+          issue: item.issue || null,
+          pages: item.page || null,
+          doi: item.DOI ? `https://doi.org/${item.DOI}` : null,
+        };
+      }
+    }
+  } catch(e) {}
+
+  // ── Tier 3: Claude API with web search (works when worker is blocked, handles all types) ──
+  try {
+    const prompt = `You are a metadata extraction assistant. Given a URL, extract bibliographic metadata for an APA 7th edition reference.
+
+URL: ${url}
+
+Return ONLY a valid JSON object (no markdown, no explanation) with these fields:
+- url (string), title (string|null), author (string|null, format: "Surname, F." separated by "; "),
+  year (number|null), month (full month name string|null), day (number|null),
+  siteName (string|null), type (one of: webpage/youtube/news/journal/gov/magazine/podcast/podcast-ep/speech/encyclopaedia/film/tv-series/book),
+  volume (string|null), issue (string|null), pages (string|null), doi (full URL string|null)
+
+Infer as much as possible from the URL slug if you cannot fetch the page. Never return null for title if a reasonable title can be inferred.`;
+
+    const res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 800,
+        tools: [{ type: 'web_search_20250305', name: 'web_search' }],
+        messages: [{ role: 'user', content: prompt }]
+      }),
+      signal: AbortSignal.timeout(20000)
+    });
+    if (res.ok) {
+      const data = await res.json();
+      const text = data.content.filter(b => b.type === 'text').map(b => b.text).join('');
+      const clean = text.replace(/```json|```/g, '').trim();
+      const meta = JSON.parse(clean);
+      meta._source = 'claude';
+      meta._workerBlocked = true;
+      return meta;
+    }
+  } catch(e) {}
+
+  // ── Final fallback: parse what we can from the URL itself ──
+  const meta = parseFromURL(url);
+  meta._source = 'url-only';
+  meta._workerBlocked = true;
+  return meta;
 }
 
 function parseMetaFromHTML(html, url) {
@@ -892,7 +954,11 @@ async function generateSingle() {
     meta.type = type;
     const ref = buildRef(meta, type);
     document.getElementById('single-output').innerHTML = `<p class="ref-entry">${ref}</p>`;
-    status.innerHTML = '✓ Done';
+    if (meta._workerBlocked) {
+      status.innerHTML = '⚠ School Wi-Fi detected — reference generated via fallback. <span style="color:#888">For best results, try at home.</span>';
+    } else {
+      status.innerHTML = '✓ Done';
+    }
   } catch(e) {
     document.getElementById('single-output').innerHTML = `<p class="ref-entry" style="color:#888">Could not fetch metadata. Please use Manual Entry or check the URL.</p>`;
     status.innerHTML = 'Error';
@@ -948,6 +1014,9 @@ async function generateBatch() {
       batchRefs.push({ ref, url, key: sortKey(ref) });
       card.querySelector('.item-status').remove();
       card.innerHTML += `<div class="item-ref">${ref}</div>`;
+      if (meta._workerBlocked) {
+        card.innerHTML += `<div class="item-status" style="margin-top:0.3rem">⚠ School Wi-Fi detected — used fallback. Try at home for best results.</div>`;
+      }
     } catch(e) {
       batchRefs.push({ ref: null, url, key: url });
       card.classList.add('error');
