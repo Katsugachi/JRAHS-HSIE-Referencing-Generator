@@ -32,28 +32,15 @@
     line-height: 1.6;
   }
 
-  /* ── HEADER ── */
   header {
     border-bottom: var(--border);
     padding: 2rem 0 0;
     position: relative;
     overflow: hidden;
   }
-  .header-rule {
-    height: 4px;
-    background: var(--black);
-    margin-bottom: 1px;
-  }
-  .header-rule-thin {
-    height: 1px;
-    background: var(--black);
-    margin-bottom: 1.5rem;
-  }
-  .header-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
+  .header-rule { height: 4px; background: var(--black); margin-bottom: 1px; }
+  .header-rule-thin { height: 1px; background: var(--black); margin-bottom: 1.5rem; }
+  .header-inner { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
   .school-tag {
     font-family: var(--font-mono);
     font-size: 0.65rem;
@@ -71,9 +58,7 @@
     letter-spacing: -0.01em;
     margin-bottom: 0.3rem;
   }
-  header h1 span {
-    font-style: normal;
-  }
+  header h1 span { font-style: normal; }
   .header-sub {
     font-family: var(--font-sans);
     font-size: 0.8rem;
@@ -83,12 +68,7 @@
     border-bottom: var(--thin);
     margin-bottom: 0;
   }
-  .header-nav {
-    display: flex;
-    gap: 0;
-    border-top: var(--thin);
-    margin-top: 1rem;
-  }
+  .header-nav { display: flex; gap: 0; border-top: var(--thin); margin-top: 1rem; }
   .tab-btn {
     font-family: var(--font-mono);
     font-size: 0.7rem;
@@ -101,26 +81,16 @@
     cursor: pointer;
     color: #888;
     transition: all 0.15s;
-    position: relative;
   }
   .tab-btn:first-child { border-left: var(--thin); }
   .tab-btn:hover { color: var(--black); background: var(--light); }
-  .tab-btn.active {
-    color: var(--white);
-    background: var(--black);
-  }
+  .tab-btn.active { color: var(--white); background: var(--black); }
 
-  /* ── MAIN ── */
-  main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2.5rem 2rem;
-  }
+  main { max-width: 900px; margin: 0 auto; padding: 2.5rem 2rem; }
 
   .tab-content { display: none; }
   .tab-content.active { display: block; }
 
-  /* ── SECTION LABELS ── */
   .section-label {
     font-family: var(--font-mono);
     font-size: 0.65rem;
@@ -131,10 +101,7 @@
     display: block;
   }
 
-  /* ── INPUTS ── */
-  .input-group {
-    margin-bottom: 1.5rem;
-  }
+  .input-group { margin-bottom: 1.5rem; }
   textarea, input[type="text"], select {
     width: 100%;
     font-family: var(--font-mono);
@@ -148,12 +115,9 @@
     appearance: none;
     resize: vertical;
   }
-  textarea:focus, input[type="text"]:focus, select:focus {
-    background: var(--light);
-  }
+  textarea:focus, input[type="text"]:focus, select:focus { background: var(--light); }
   textarea { min-height: 120px; }
 
-  /* ── BUTTONS ── */
   .btn {
     font-family: var(--font-mono);
     font-size: 0.75rem;
@@ -167,15 +131,9 @@
     align-items: center;
     gap: 0.5rem;
   }
-  .btn-primary {
-    background: var(--black);
-    color: var(--white);
-  }
+  .btn-primary { background: var(--black); color: var(--white); }
   .btn-primary:hover { background: #333; }
-  .btn-secondary {
-    background: var(--white);
-    color: var(--black);
-  }
+  .btn-secondary { background: var(--white); color: var(--black); }
   .btn-secondary:hover { background: var(--light); }
   .btn:disabled { opacity: 0.4; cursor: not-allowed; }
 
@@ -187,7 +145,6 @@
     margin-bottom: 1.5rem;
   }
 
-  /* ── SOURCE TYPE SELECT ── */
   .type-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -210,13 +167,7 @@
   .type-card:hover { background: var(--light); }
   .type-card.selected { background: var(--black); color: var(--white); }
 
-  /* ── FORM FIELDS ── */
-  .field-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
+  .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
   .field-grid.one { grid-template-columns: 1fr; }
   .field-grid.three { grid-template-columns: 1fr 1fr 1fr; }
   .field { display: flex; flex-direction: column; gap: 0.3rem; }
@@ -228,19 +179,9 @@
     color: #666;
   }
 
-  /* ── DIVIDER ── */
-  .divider {
-    border: none;
-    border-top: var(--thin);
-    margin: 2rem 0;
-  }
-  .divider-bold {
-    border: none;
-    border-top: var(--border);
-    margin: 2rem 0;
-  }
+  .divider { border: none; border-top: var(--thin); margin: 2rem 0; }
+  .divider-bold { border: none; border-top: var(--border); margin: 2rem 0; }
 
-  /* ── OUTPUT ── */
   .output-header {
     display: flex;
     align-items: center;
@@ -249,11 +190,7 @@
     flex-wrap: wrap;
     gap: 0.5rem;
   }
-  .output-title {
-    font-family: var(--font-serif);
-    font-size: 1.1rem;
-    font-style: italic;
-  }
+  .output-title { font-family: var(--font-serif); font-size: 1.1rem; font-style: italic; }
 
   .references-box {
     border: var(--border);
@@ -267,7 +204,7 @@
     font-family: 'Times New Roman', Times, serif;
     font-size: 11pt;
     color: #000;
-    line-height: 2; /* double spaced */
+    line-height: 2;
   }
   .ref-list-title {
     font-family: 'Times New Roman', Times, serif;
@@ -287,7 +224,6 @@
   }
   .ref-entry a { color: #000; text-decoration: none; }
 
-  /* Empty state */
   .empty-state {
     font-family: var(--font-mono);
     font-size: 0.75rem;
@@ -296,7 +232,6 @@
     padding: 1rem 0;
   }
 
-  /* ── ITEM CARD (batch results) ── */
   .item-card {
     border: var(--thin);
     border-left: 3px solid var(--black);
@@ -310,27 +245,24 @@
     to { opacity: 1; transform: translateY(0); }
   }
   .item-card.error { border-left-color: #888; opacity: 0.7; }
-  .item-url {
+  .item-url { font-family: var(--font-mono); font-size: 0.65rem; color: #888; margin-bottom: 0.3rem; word-break: break-all; }
+  .item-ref { font-family: 'Times New Roman', Times, serif; font-size: 10.5pt; line-height: 1.8; padding-left: 2em; text-indent: -2em; }
+  .item-status { font-family: var(--font-mono); font-size: 0.65rem; color: #888; }
+
+  /* Type badge shown on item cards */
+  .type-badge {
+    display: inline-block;
     font-family: var(--font-mono);
-    font-size: 0.65rem;
-    color: #888;
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--light);
+    border: var(--thin);
+    padding: 0.1rem 0.4rem;
     margin-bottom: 0.3rem;
-    word-break: break-all;
-  }
-  .item-ref {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 10.5pt;
-    line-height: 1.8;
-    padding-left: 2em;
-    text-indent: -2em;
-  }
-  .item-status {
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    color: #888;
+    color: #666;
   }
 
-  /* ── SPINNER ── */
   .spinner {
     display: inline-block;
     width: 12px;
@@ -342,17 +274,8 @@
   }
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  /* ── GUIDE SECTION ── */
-  .guide-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  .guide-card {
-    border: var(--thin);
-    padding: 1.2rem;
-  }
+  .guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
+  .guide-card { border: var(--thin); padding: 1.2rem; }
   .guide-card h3 {
     font-family: var(--font-mono);
     font-size: 0.7rem;
@@ -371,15 +294,8 @@
     background: var(--light);
     border-left: 2px solid #ccc;
   }
-  .guide-example {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 9.5pt;
-    line-height: 1.7;
-    padding-left: 1.5em;
-    text-indent: -1.5em;
-  }
+  .guide-example { font-family: 'Times New Roman', Times, serif; font-size: 9.5pt; line-height: 1.7; padding-left: 1.5em; text-indent: -1.5em; }
 
-  /* ── TOAST ── */
   #toast {
     position: fixed;
     bottom: 2rem;
@@ -398,19 +314,8 @@
   }
   #toast.show { opacity: 1; }
 
-  /* ── PROGRESS ── */
-  .progress-bar-wrap {
-    height: 3px;
-    background: var(--mid);
-    margin-bottom: 1rem;
-    display: none;
-  }
-  .progress-bar-fill {
-    height: 100%;
-    background: var(--black);
-    width: 0%;
-    transition: width 0.3s;
-  }
+  .progress-bar-wrap { height: 3px; background: var(--mid); margin-bottom: 1rem; display: none; }
+  .progress-bar-fill { height: 100%; background: var(--black); width: 0%; transition: width 0.3s; }
 
   @media (max-width: 600px) {
     .field-grid { grid-template-columns: 1fr; }
@@ -428,28 +333,29 @@
   <div class="header-inner">
     <div class="school-tag">James Ruse Agricultural High School · HSIE</div>
     <h1><span>Reference</span> Generator</h1>
-    <p class="header-sub">James Ruse HSIE Referencing Guidelines Accurate - Do Not Rely On. Double Check References</p>
+    <p class="header-sub">James Ruse HSIE Referencing Guidelines — Always double-check generated references</p>
     <nav class="header-nav">
-      <button class="tab-btn active" onclick="switchTab('single')">Single URL</button>
-      <button class="tab-btn" onclick="switchTab('batch')">Batch / Paste Text</button>
-      <button class="tab-btn" onclick="switchTab('guide')">Reference Guide</button>
+      <button class="tab-btn active" onclick="switchTab('single', this)">Single URL</button>
+      <button class="tab-btn" onclick="switchTab('batch', this)">Batch / Paste Text</button>
+      <button class="tab-btn" onclick="switchTab('guide', this)">Reference Guide</button>
     </nav>
   </div>
 </header>
 
 <main>
 
-<!-- ─────────────── SINGLE URL ─────────────── -->
+<!-- SINGLE URL -->
 <div id="tab-single" class="tab-content active">
   <span class="section-label">Enter a URL to generate a reference</span>
   <div class="input-group">
-    <input type="text" id="single-url" placeholder="https://example.com/article" 
+    <input type="text" id="single-url" placeholder="https://example.com/article"
            onkeydown="if(event.key==='Enter')generateSingle()">
   </div>
 
-  <span class="section-label" style="margin-bottom:0.4rem">Source type</span>
+  <span class="section-label" style="margin-bottom:0.4rem">Source type <span style="font-size:0.6rem;color:#aaa">(auto-detected — override if needed)</span></span>
   <div class="type-grid" id="single-type-grid">
-    <div class="type-card selected" data-type="webpage" onclick="selectType(this)">Webpage</div>
+    <div class="type-card selected" data-type="auto" onclick="selectType(this)">Auto-detect</div>
+    <div class="type-card" data-type="webpage" onclick="selectType(this)">Webpage</div>
     <div class="type-card" data-type="youtube" onclick="selectType(this)">YouTube</div>
     <div class="type-card" data-type="news" onclick="selectType(this)">News Article</div>
     <div class="type-card" data-type="magazine" onclick="selectType(this)">Magazine</div>
@@ -457,12 +363,11 @@
     <div class="type-card" data-type="gov" onclick="selectType(this)">Gov. Report</div>
     <div class="type-card" data-type="podcast" onclick="selectType(this)">Podcast</div>
     <div class="type-card" data-type="speech" onclick="selectType(this)">Speech</div>
+    <div class="type-card" data-type="encyclopaedia" onclick="selectType(this)">Encyclopaedia</div>
   </div>
 
   <div class="btn-row">
-    <button class="btn btn-primary" onclick="generateSingle()" id="single-btn">
-      Generate Reference
-    </button>
+    <button class="btn btn-primary" onclick="generateSingle()" id="single-btn">Generate Reference</button>
     <span id="single-status" class="item-status"></span>
   </div>
 
@@ -480,11 +385,11 @@
   </div>
 </div>
 
-<!-- ─────────────── BATCH ─────────────── -->
+<!-- BATCH -->
 <div id="tab-batch" class="tab-content">
-  <span class="section-label">Paste any text — URLs will be extracted automatically</span>
+  <span class="section-label">Paste any text — URLs will be extracted and typed automatically</span>
   <div class="input-group">
-    <textarea id="batch-input" placeholder="Paste your text, bibliography draft, or list of URLs here. All URLs will be detected and referenced automatically. You can also paste just a list of URLs, one per line."></textarea>
+    <textarea id="batch-input" placeholder="Paste your text, bibliography draft, or list of URLs here. All URLs will be detected, automatically typed (news, journal, gov, YouTube, etc.), and formatted as references."></textarea>
   </div>
 
   <div class="btn-row">
@@ -497,7 +402,6 @@
     <div class="progress-bar-fill" id="batch-progress-fill"></div>
   </div>
 
-  <!-- Live item cards -->
   <div id="batch-items"></div>
 
   <div id="batch-output-section" style="display:none">
@@ -515,9 +419,7 @@
   </div>
 </div>
 
-
-
-<!-- ─────────────── GUIDE ─────────────── -->
+<!-- GUIDE -->
 <div id="tab-guide" class="tab-content">
   <span class="section-label">Quick Reference — HSIE Referencing Guide</span>
 
@@ -525,7 +427,7 @@
     <div class="guide-card">
       <h3>Webpage — Individual Author</h3>
       <div class="guide-form">Author, A. (Year, Month Day). Title of webpage. Title of Website. URL</div>
-      <p class="guide-example">Rae, J., & Thompson, S. (2017, May 5). Louis XVI. <em>Alpha History.</em> https://alphahistory.com/frenchrevolution/louis-xvi/</p>
+      <p class="guide-example">Rae, J., &amp; Thompson, S. (2017, May 5). Louis XVI. <em>Alpha History.</em> https://alphahistory.com/frenchrevolution/louis-xvi/</p>
     </div>
     <div class="guide-card">
       <h3>Webpage — Organisation Author</h3>
@@ -550,17 +452,17 @@
     <div class="guide-card">
       <h3>YouTube</h3>
       <div class="guide-form">Author, A. (Year, Month Day). Title [Video]. YouTube. URL</div>
-      <p class="guide-example">Radio Free Europe. (2020, May 15). The death of Stalin: Unique propaganda footage shows dictator's funeral [Video]. <em>YouTube.</em> https://www.youtube.com/watch?v=eQo27EoLp_A</p>
+      <p class="guide-example">Radio Free Europe. (2020, May 15). The death of Stalin: Unique propaganda footage [Video]. <em>YouTube.</em> https://www.youtube.com/watch?v=eQo27EoLp_A</p>
     </div>
     <div class="guide-card">
       <h3>Government Report</h3>
       <div class="guide-form">Department Name. (Year, Month Day). Title of document. Publisher. URL</div>
-      <p class="guide-example">President's Commission on the Assassination of President Kennedy. (1964). <em>Report of the President's Commission on the assassination of President Kennedy.</em> National Archives. https://...</p>
+      <p class="guide-example">President's Commission on the Assassination of President Kennedy. (1964). <em>Report of the President's Commission.</em> National Archives. https://...</p>
     </div>
     <div class="guide-card">
       <h3>Encyclopaedia</h3>
       <div class="guide-form">Author, A. (n.d.). Title of entry. In Encyclopaedia. Retrieved Month Day, Year, from URL</div>
-      <p class="guide-example">Higonnet, P. L., & Popkin, J. D. (n.d.). The causes of the French revolution. In <em>Encyclopedia Britannica.</em> Retrieved February 16, 2022, from https://www.britannica.com/...</p>
+      <p class="guide-example">Higonnet, P. L., &amp; Popkin, J. D. (n.d.). The causes of the French revolution. In <em>Encyclopedia Britannica.</em> Retrieved February 16, 2022, from https://www.britannica.com/...</p>
     </div>
     <div class="guide-card">
       <h3>Speech (Audio Recording)</h3>
@@ -570,7 +472,7 @@
     <div class="guide-card">
       <h3>Podcast Episode</h3>
       <div class="guide-form">Author, A. (Host). (Year, Month Day). Episode title (No. X) [Audio Podcast Episode]. In Podcast Title. Company. URL</div>
-      <p class="guide-example">Glass, I. (Host). (2011, August 12). Amusement park (No. 443) [Audio Podcast episode]. In <em>This American Life.</em> WEBZ Chicago. https://...</p>
+      <p class="guide-example">Glass, I. (Host). (2011, August 12). Amusement park (No. 443) [Audio Podcast episode]. In <em>This American Life.</em> WBEZ Chicago. https://...</p>
     </div>
   </div>
 
@@ -600,19 +502,73 @@
 //  CONFIGURATION
 // ══════════════════════════════════════════════
 
+const WORKER_URL = 'https://test.adriankatsugachi.workers.dev/';
 
-const WORKER_URL = 'https://hsie.adriankatsugachi.workers.dev/';
+// ══════════════════════════════════════════════
+//  CLIENT-SIDE TYPE DETECTION (fallback + cross-check)
+// ══════════════════════════════════════════════
+
+function inferTypeFromURL(url) {
+  try {
+    const u = new URL(url);
+    const hostname = u.hostname.replace('www.', '').toLowerCase();
+    const pathname = u.pathname.toLowerCase();
+
+    if (hostname.includes('youtube.com') || hostname.includes('youtu.be')) return 'youtube';
+
+    // Gov domains
+    if (hostname.endsWith('.gov') || hostname.endsWith('.gov.au') || hostname.endsWith('.gov.uk')
+      || hostname.endsWith('.govt.nz') || hostname.endsWith('.gc.ca')
+      || hostname.includes('parliament.') || hostname.includes('legislation.')) return 'gov';
+
+    // Encyclopaedias
+    if (hostname.includes('britannica.com') || hostname.includes('wikipedia.org')
+      || hostname.includes('encyclopedia.com') || hostname.includes('worldbook.com')) return 'encyclopaedia';
+
+    // Academic/journal publishers
+    const academic = ['jstor.org','pubmed.ncbi.nlm.nih.gov','ncbi.nlm.nih.gov','sciencedirect.com',
+      'springer.com','wiley.com','tandfonline.com','sagepub.com','journals.plos.org','nature.com',
+      'science.org','cell.com','thelancet.com','bmj.com','nejm.org','jamanetwork.com','oup.com',
+      'cambridge.org','arxiv.org','ssrn.com','degruyter.com','researchgate.net'];
+    if (academic.some(d => hostname.includes(d))) return 'journal';
+
+    // News
+    const news = ['bbc.co.uk','bbc.com','cnn.com','reuters.com','apnews.com','theguardian.com',
+      'nytimes.com','washingtonpost.com','smh.com.au','theage.com.au','abc.net.au','sbs.com.au',
+      'news.com.au','afr.com','theaustralian.com.au','foxnews.com','nbcnews.com','cbsnews.com',
+      'abcnews.go.com','npr.org','politico.com','bloomberg.com','ft.com','theatlantic.com',
+      'aljazeera.com','france24.com','dw.com','vox.com','slate.com','salon.com'];
+    if (news.some(d => hostname.includes(d))) return 'news';
+
+    // Magazines
+    const mags = ['newyorker.com','wired.com','rollingstone.com','vanityfair.com','gq.com',
+      'nationalgeographic.com','scientificamerican.com','newscientist.com','smithsonianmag.com',
+      'popularmechanics.com','foreignaffairs.com','foreignpolicy.com','economist.com','time.com','newsweek.com'];
+    if (mags.some(d => hostname.includes(d))) return 'magazine';
+
+    // Podcasts
+    const pods = ['podcasts.apple.com','open.spotify.com','podbean.com','buzzsprout.com','anchor.fm'];
+    if (pods.some(d => hostname.includes(d))) return 'podcast-ep';
+
+    // Speech
+    if (hostname.includes('americanrhetoric.com') || hostname.includes('millercenter.org')) return 'speech';
+
+    // DOI in URL → journal
+    if (hostname.includes('doi.org') || pathname.includes('/doi/') || pathname.match(/10\.\d{4}/)) return 'journal';
+
+  } catch {}
+  return null; // unknown, use worker result
+}
 
 // ══════════════════════════════════════════════
 //  TAB SWITCHING
 // ══════════════════════════════════════════════
 
-
-function switchTab(name) {
+function switchTab(name, btn) {
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + name).classList.add('active');
-  event.target.classList.add('active');
+  if (btn) btn.classList.add('active');
 }
 
 function selectType(el) {
@@ -625,20 +581,19 @@ function selectType(el) {
 // ══════════════════════════════════════════════
 
 async function fetchMeta(url) {
-  // ── Tier 1: Cloudflare Worker (best results, full scrape + CrossRef) ──
+  // Tier 1: Cloudflare Worker
   try {
-    const res = await fetch(WORKER_URL + '?url=' + encodeURIComponent(url), { signal: AbortSignal.timeout(8000) });
+    const res = await fetch(WORKER_URL + '?url=' + encodeURIComponent(url), { signal: AbortSignal.timeout(10000) });
     if (res.ok) {
       const data = await res.json();
-      data._source = 'worker';
-      return data;
+      if (!data.error) {
+        data._source = 'worker';
+        return data;
+      }
     }
   } catch(e) {}
 
-  // Worker failed — flag it so callers can warn the user
-  const workerBlocked = true;
-
-  // ── Tier 2: CrossRef direct (for journal/DOI URLs — works even when worker is blocked) ──
+  // Tier 2: CrossRef for DOI URLs
   try {
     const doiMatch = url.match(/doi\.org\/(.+)/i) || url.match(/(10\.\d{4,9}\/[^\s"'<>?#]+)/i);
     if (doiMatch) {
@@ -648,132 +603,55 @@ async function fetchMeta(url) {
         const item = (await apiRes.json()).message;
         const monthNum = item.published?.['date-parts']?.[0]?.[1];
         return {
-          _source: 'crossref', _workerBlocked: true,
-          url,
+          _source: 'crossref', _workerBlocked: true, url,
           title: item.title?.[0] || null,
           author: item.author?.map(a => `${a.family}, ${a.given?.charAt(0)}.`).join('; ') || null,
           year: item.published?.['date-parts']?.[0]?.[0] || null,
           month: monthNum ? new Date(0, monthNum - 1).toLocaleString('en-US', { month: 'long' }) : null,
           siteName: item['container-title']?.[0] || null,
-          type: 'journal',
-          volume: item.volume || null,
-          issue: item.issue || null,
-          pages: item.page || null,
-          doi: item.DOI ? `https://doi.org/${item.DOI}` : null,
+          type: 'journal', volume: item.volume || null, issue: item.issue || null,
+          pages: item.page || null, doi: item.DOI ? `https://doi.org/${item.DOI}` : null,
         };
       }
     }
   } catch(e) {}
 
-  // ── Tier 3: Claude API with web search (works when worker is blocked, handles all types) ──
-  try {
-    const prompt = `You are a metadata extraction assistant. Given a URL, extract bibliographic metadata for an APA 7th edition reference.
-
-URL: ${url}
-
-Return ONLY a valid JSON object (no markdown, no explanation) with these fields:
-- url (string), title (string|null), author (string|null, format: "Surname, F." separated by "; "),
-  year (number|null), month (full month name string|null), day (number|null),
-  siteName (string|null), type (one of: webpage/youtube/news/journal/gov/magazine/podcast/podcast-ep/speech/encyclopaedia/film/tv-series/book),
-  volume (string|null), issue (string|null), pages (string|null), doi (full URL string|null)
-
-Infer as much as possible from the URL slug if you cannot fetch the page. Never return null for title if a reasonable title can be inferred.`;
-
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 800,
-        tools: [{ type: 'web_search_20250305', name: 'web_search' }],
-        messages: [{ role: 'user', content: prompt }]
-      }),
-      signal: AbortSignal.timeout(20000)
-    });
-    if (res.ok) {
-      const data = await res.json();
-      const text = data.content.filter(b => b.type === 'text').map(b => b.text).join('');
-      const clean = text.replace(/```json|```/g, '').trim();
-      const meta = JSON.parse(clean);
-      meta._source = 'claude';
-      meta._workerBlocked = true;
-      return meta;
-    }
-  } catch(e) {}
-
-  // ── Final fallback: parse what we can from the URL itself ──
+  // Tier 3: URL-only fallback with client-side type inference
   const meta = parseFromURL(url);
   meta._source = 'url-only';
   meta._workerBlocked = true;
   return meta;
 }
 
-function parseMetaFromHTML(html, url) {
-  const get = (pattern) => {
-    const m = html.match(pattern);
-    return m ? decodeEntities(m[1]?.trim()) : null;
-  };
-  const title =
-    get(/<meta[^>]+property="og:title"[^>]+content="([^"]+)"/i) ||
-    get(/<meta[^>]+content="([^"]+)"[^>]+property="og:title"/i) ||
-    get(/<title[^>]*>([^<]+)<\/title>/i) || null;
-  const author =
-    get(/<meta[^>]+name="author"[^>]+content="([^"]+)"/i) ||
-    get(/<meta[^>]+property="article:author"[^>]+content="([^"]+)"/i) || null;
-  const dateRaw =
-    get(/<meta[^>]+property="article:published_time"[^>]+content="([^"]+)"/i) ||
-    get(/<meta[^>]+name="date"[^>]+content="([^"]+)"/i) ||
-    get(/<time[^>]+datetime="([^"]+)"/i) || null;
-  const siteName =
-    get(/<meta[^>]+property="og:site_name"[^>]+content="([^"]+)"/i) || null;
-
-  let year=null, month=null, day=null;
-  if (dateRaw) {
-    const d = new Date(dateRaw);
-    if (!isNaN(d)) { year=d.getFullYear(); month=d.toLocaleString('en-US',{month:'long'}); day=d.getDate(); }
-  }
-
-  const urlObj = new URL(url);
-  const hostname = urlObj.hostname.replace('www.','');
-  let type = 'webpage';
-  if (hostname.includes('youtube.com')||hostname.includes('youtu.be')) type='youtube';
-
-  return { url, title, author, dateRaw, year, month, day, siteName, hostname, type };
-}
-
 function parseFromURL(url) {
   try {
     const u = new URL(url);
     const hostname = u.hostname.replace('www.','');
-    let type = 'webpage';
-    if (hostname.includes('youtube.com')||hostname.includes('youtu.be')) type='youtube';
-    return { url, title: null, author: null, year: null, month: null, day: null, siteName: null, hostname, type };
-  } catch { return { url, title: null, author: null, year: null, month: null, day: null, siteName: null, hostname: '', type: 'webpage' }; }
-}
-
-function decodeEntities(str) {
-  if (!str) return str;
-  return str.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;/g,"'").replace(/&nbsp;/g,' ');
+    const type = inferTypeFromURL(url) || 'webpage';
+    // Try to extract a readable title from the path slug
+    const slug = u.pathname.split('/').filter(Boolean).pop() || '';
+    const guessTitle = slug.replace(/[-_]/g, ' ').replace(/\.\w+$/, '') || null;
+    return { url, title: guessTitle, author: null, year: null, month: null, day: null,
+      siteName: hostname.split('.')[0], hostname, type };
+  } catch {
+    return { url, title: null, author: null, year: null, month: null, day: null, siteName: '', type: 'webpage' };
+  }
 }
 
 // ══════════════════════════════════════════════
-//  REFERENCE FORMATTING (HSIE GUIDE)
+//  REFERENCE FORMATTING
 // ══════════════════════════════════════════════
-
-const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
 function toSentenceCase(str) {
   if (!str) return '';
-  // Capitalise first letter, lowercase rest EXCEPT proper nouns (we preserve them)
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 function formatAuthorLastFirst(name) {
   if (!name) return null;
   name = name.trim();
-  // If already "Last, F." format, return as is
-  if (name.match(/^[A-Z][a-z]+,\s/)) return name;
-  // Handle "First Last" → "Last, F."
+  // Already in "Last, F." format
+  if (name.match(/^[A-ZÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝ][a-zàáâãäåæçèéêëìíîïðñòóôõöøùúûüýþÿ]+,\s/)) return name;
   const parts = name.split(/\s+/);
   if (parts.length === 1) return parts[0];
   const last = parts[parts.length - 1];
@@ -783,26 +661,37 @@ function formatAuthorLastFirst(name) {
 
 function formatAuthors(authorStr) {
   if (!authorStr) return null;
-  const names = authorStr.split(/;\s*|,\s*|\s+and\s+|\s+&\s+/).map(s => s.trim()).filter(Boolean);
+  // Handle semicolon-separated list (already pre-split by worker)
+  const names = authorStr.split(/;\s*/).map(s => s.trim()).filter(Boolean);
   if (names.length === 1) return formatAuthorLastFirst(names[0]);
   if (names.length === 2) return formatAuthorLastFirst(names[0]) + ', & ' + formatAuthorLastFirst(names[1]);
-  const all = names.map((n,i) => {
-    if (i === names.length-1) return '& ' + formatAuthorLastFirst(n);
-    return formatAuthorLastFirst(n);
-  });
-  return all.join(', ');
+  return names.map((n, i) => i === names.length - 1 ? '& ' + formatAuthorLastFirst(n) : formatAuthorLastFirst(n)).join(', ');
 }
 
-function isOrganisation(name) {
-  if (!name) return false;
-  // Heuristic: contains no comma (not "Last, F.") and has multiple words or is all caps / known pattern
-  return !name.includes(',') && (name.split(' ').length > 1 || name === name.toUpperCase());
+function extractSiteNameFromURL(url) {
+  try {
+    const u = new URL(url);
+    const parts = u.hostname.replace('www.','').split('.');
+    // Capitalise first segment
+    return parts[0].charAt(0).toUpperCase() + parts[0].slice(1);
+  } catch { return 'Website'; }
 }
 
-// Build HTML reference (with italic spans preserved for copy)
+const it = (s) => `<em>${s}</em>`;
+
 function buildRef(meta, typeOverride) {
-  const type = typeOverride || meta.type || 'webpage';
+  // Use override > worker-detected > URL-inferred
+  const type = (typeOverride && typeOverride !== 'auto')
+    ? typeOverride
+    : (meta.type || inferTypeFromURL(meta.url) || 'webpage');
+
   const url = meta.url || '';
+  // If metadata is incomplete, warn user to fill in manually
+  if (meta._incomplete && !meta.title) {
+    const journal = meta.journal || meta.siteName || 'Unknown Journal';
+    const yr = meta.year ? ` (${meta.year})` : '';
+    return `<span style="color:#b00;font-family:var(--font-mono);font-size:0.72rem;font-style:normal">⚠ Could not retrieve metadata — not indexed in any public database. Fill in manually:<br>[Author(s)]${yr}. [Article title]. <em>${journal}.</em> ${url}</span>`;
+  }
   const title = toSentenceCase(meta.title) || 'Untitled';
   const siteName = meta.siteName || extractSiteNameFromURL(url);
   const year = meta.year || null;
@@ -814,27 +703,21 @@ function buildRef(meta, typeOverride) {
     ? (month ? (day ? `${year}, ${month} ${day}` : `${year}, ${month}`) : `${year}`)
     : 'n.d.';
 
-  const urlText = url;
-  const it = (s) => `<em>${s}</em>`;
-
-  // --- PRESERVED TYPES ---
   if (type === 'youtube') {
     const author = authorStr || siteName || extractSiteNameFromURL(url);
-    return `${author}. (${dateStr}). ${toSentenceCase(title)} [Video]. ${it('YouTube.')} ${urlText}`;
+    return `${author}. (${dateStr}). ${toSentenceCase(title)} [Video]. ${it('YouTube.')} ${url}`;
   }
 
   if (type === 'journal') {
-    const author = formatAuthors(authorStr); // REMOVED || siteName fallback
-    const journal = meta.journal || siteName || 'Unknown Journal';
+    const author = formatAuthors(authorStr);
+    const journal = meta.journal || meta.siteName || 'Unknown Journal';
     const vol = meta.volume ? `, ${it(meta.volume)}` : '';
     const iss = meta.issue ? `(${meta.issue})` : '';
     const pages = meta.pages ? `, ${meta.pages}` : '';
     const doi = meta.doi ? ` ${meta.doi}` : (url ? ` ${url}` : '');
-    
     if (author) {
       return `${author} (${dateStr}). ${toSentenceCase(title)}. ${it(journal)}${vol}${iss}${pages}.${doi}`;
     } else {
-      // If no human author, start with Title (Correct HSIE/APA)
       return `${toSentenceCase(title)}. (${dateStr}). ${it(journal)}${vol}${iss}${pages}.${doi}`;
     }
   }
@@ -843,9 +726,9 @@ function buildRef(meta, typeOverride) {
     const author = formatAuthors(authorStr);
     const paper = siteName || extractSiteNameFromURL(url);
     if (author && author.toLowerCase() !== paper.toLowerCase()) {
-      return `${author} (${dateStr}). ${toSentenceCase(title)}. ${it(paper + '.')} ${urlText}`;
+      return `${author} (${dateStr}). ${toSentenceCase(title)}. ${it(paper + '.')} ${url}`;
     } else {
-      return `${paper}. (${dateStr}). ${toSentenceCase(title)}. ${urlText}`;
+      return `${paper}. (${dateStr}). ${toSentenceCase(title)}. ${url}`;
     }
   }
 
@@ -853,23 +736,23 @@ function buildRef(meta, typeOverride) {
     const author = formatAuthors(authorStr);
     const mag = siteName || extractSiteNameFromURL(url);
     if (author && author.toLowerCase() !== mag.toLowerCase()) {
-      return `${author} (${dateStr}). ${toSentenceCase(title)}. ${it(mag + '.')} ${urlText}`;
+      return `${author} (${dateStr}). ${toSentenceCase(title)}. ${it(mag + '.')} ${url}`;
     } else {
-      return `${mag}. (${dateStr}). ${toSentenceCase(title)}. ${urlText}`;
+      return `${mag}. (${dateStr}). ${toSentenceCase(title)}. ${url}`;
     }
   }
 
   if (type === 'gov') {
     const org = authorStr || siteName || 'Government Department';
-    return `${org}. (${dateStr}). ${it(toSentenceCase(title) + '.')} ${urlText}`;
+    return `${org}. (${dateStr}). ${it(toSentenceCase(title) + '.')} ${url}`;
   }
 
   if (type === 'encyclopaedia') {
     const author = formatAuthors(authorStr);
     const enc = meta.encyclopaedia || siteName || extractSiteNameFromURL(url);
     const today = new Date();
-    const retrieved = `Retrieved ${today.toLocaleString('en-US',{month:'long'})} ${today.getDate()}, ${today.getFullYear()}, from ${urlText}`;
-    return author 
+    const retrieved = `Retrieved ${today.toLocaleString('en-US',{month:'long'})} ${today.getDate()}, ${today.getFullYear()}, from ${url}`;
+    return author
       ? `${author} (${dateStr}). ${toSentenceCase(title)}. In ${it(enc + '.')} ${retrieved}`
       : `${toSentenceCase(title)}. (${dateStr}). In ${it(enc + '.')} ${retrieved}`;
   }
@@ -878,7 +761,7 @@ function buildRef(meta, typeOverride) {
     const host = formatAuthors(authorStr) || 'Unknown Host';
     const podTitle = meta.podcastTitle || toSentenceCase(title);
     const company = meta.company || siteName || '';
-    return `${host} (Host). (${dateStr}). ${it(podTitle)} [Audio Podcast]. ${company ? company + '.' : ''} ${urlText}`;
+    return `${host} (Host). (${dateStr}). ${it(podTitle)} [Audio Podcast]. ${company ? company + '.' : ''} ${url}`;
   }
 
   if (type === 'podcast-ep') {
@@ -887,48 +770,41 @@ function buildRef(meta, typeOverride) {
     const epNum = meta.episodeNum ? ` (No. ${meta.episodeNum})` : '';
     const podTitle = meta.podcastTitle || '';
     const company = meta.company || siteName || '';
-    return `${host} (Host). (${dateStr}). ${epTitle}${epNum} [Audio Podcast Episode].${podTitle ? ` In ${it(podTitle + '.')}` : ''} ${company ? company + '.' : ''} ${urlText}`;
+    return `${host} (Host). (${dateStr}). ${epTitle}${epNum} [Audio Podcast Episode].${podTitle ? ` In ${it(podTitle + '.')}` : ''} ${company ? company + '.' : ''} ${url}`;
   }
 
   if (type === 'speech') {
     const speaker = formatAuthors(authorStr) || 'Unknown Speaker';
     const pub = meta.publisher || siteName || extractSiteNameFromURL(url);
     const format = meta.speechFormat || 'Speech audio recording';
-    return `${speaker} (${dateStr}). ${toSentenceCase(title)} [${format}]. ${it(pub + '.')} ${urlText}`;
+    return `${speaker} (${dateStr}). ${toSentenceCase(title)} [${format}]. ${it(pub + '.')} ${url}`;
   }
 
-  // --- PRESERVED REMAINING TYPES (Film, TV, Book) ---
   if (type === 'film') {
     const director = meta.director || authorStr || 'Unknown Director';
     return `${formatAuthors(director)} (Director). (${meta.year || 'n.d.'}). ${it(toSentenceCase(title) + '.')} [Film]. ${meta.publisher || siteName}.`;
   }
+
   if (type === 'tv-series') {
     return `${formatAuthors(meta.producer || authorStr || 'Unknown')} (Executive Producer). (${meta.yearRange || year || 'n.d.'}). ${it(toSentenceCase(title))} [TV Series]. ${meta.company || siteName}.`;
   }
+
   if (type === 'book') {
     return `${formatAuthors(meta.bookAuthor || authorStr) || 'Unknown Author'} (${dateStr}). ${it(toSentenceCase(meta.bookTitle || title) + '.')} ${meta.publisher || siteName}.`;
   }
 
-  // --- DEFAULT FALLBACK ---
-  const author = formatAuthors(authorStr); 
+  // Default: generic webpage
+  const author = formatAuthors(authorStr);
   const site = siteName || extractSiteNameFromURL(url);
   const siteIsDiffFromAuthor = author && author.toLowerCase() !== site.toLowerCase();
 
   if (author) {
-    return `${author} (${dateStr}). ${toSentenceCase(title)}. ${siteIsDiffFromAuthor ? it(site + '.') : ''} ${urlText}`.replace(/\s+/g, ' ').trim();
+    return `${author} (${dateStr}). ${toSentenceCase(title)}. ${siteIsDiffFromAuthor ? it(site + '.') : ''} ${url}`.replace(/\s+/g, ' ').trim();
   } else {
-    return `${site}. (${dateStr}). ${toSentenceCase(title)}. ${urlText}`;
+    return `${site}. (${dateStr}). ${toSentenceCase(title)}. ${url}`;
   }
 }
 
-function extractSiteNameFromURL(url) {
-  try {
-    const u = new URL(url);
-    return u.hostname.replace('www.','').split('.')[0];
-  } catch { return 'Website'; }
-}
-
-// Alphabetical sort key from a reference HTML string
 function sortKey(refHtml) {
   const text = refHtml.replace(/<[^>]+>/g,'').trim();
   return text.toLowerCase().replace(/^[^a-z]+/,'');
@@ -942,7 +818,7 @@ async function generateSingle() {
   const url = document.getElementById('single-url').value.trim();
   if (!url) { showToast('Please enter a URL'); return; }
   const typeEl = document.querySelector('#single-type-grid .selected');
-  const type = typeEl ? typeEl.dataset.type : 'webpage';
+  const typeOverride = typeEl ? typeEl.dataset.type : 'auto';
 
   const btn = document.getElementById('single-btn');
   const status = document.getElementById('single-status');
@@ -951,20 +827,31 @@ async function generateSingle() {
 
   try {
     const meta = await fetchMeta(url);
-    meta.type = type;
-    const ref = buildRef(meta, type);
-    document.getElementById('single-output').innerHTML = `<p class="ref-entry">${ref}</p>`;
+    // If user chose 'auto', respect worker's type; if user overrode, use that
+    const typeUsed = typeOverride === 'auto' ? (meta.type || 'webpage') : typeOverride;
+    const ref = buildRef(meta, typeOverride);
+
+    const typeLabel = TYPE_LABELS[typeUsed] || typeUsed;
+    document.getElementById('single-output').innerHTML =
+      `<span class="type-badge">${typeLabel}</span><p class="ref-entry">${ref}</p>`;
+
     if (meta._workerBlocked) {
-      status.innerHTML = '⚠ School Wi-Fi detected — reference generated via fallback. <span style="color:#888">For best results, try at home.</span>';
+      status.innerHTML = '⚠ Worker unreachable — used fallback. <span style="color:#aaa">Try off school Wi-Fi for best results.</span>';
     } else {
-      status.innerHTML = '✓ Done';
+      status.innerHTML = `✓ Done · detected as <strong>${typeLabel}</strong>`;
     }
   } catch(e) {
-    document.getElementById('single-output').innerHTML = `<p class="ref-entry" style="color:#888">Could not fetch metadata. Please use Manual Entry or check the URL.</p>`;
+    document.getElementById('single-output').innerHTML = `<p class="ref-entry" style="color:#888">Could not fetch metadata. Check the URL and try again.</p>`;
     status.innerHTML = 'Error';
   }
   btn.disabled = false;
 }
+
+const TYPE_LABELS = {
+  webpage: 'Webpage', youtube: 'YouTube', news: 'News Article', magazine: 'Magazine',
+  journal: 'Journal Article', gov: 'Gov. Report', podcast: 'Podcast', 'podcast-ep': 'Podcast Episode',
+  speech: 'Speech', encyclopaedia: 'Encyclopaedia', book: 'Book', film: 'Film', 'tv-series': 'TV Series',
+};
 
 // ══════════════════════════════════════════════
 //  BATCH
@@ -973,7 +860,7 @@ async function generateSingle() {
 function extractURLs(text) {
   const pattern = /https?:\/\/[^\s<>"{}|\\^`\[\]']+/gi;
   const found = [...new Set(text.match(pattern) || [])];
-  return found.map(u => u.replace(/[.,;:)]+$/, '')); // strip trailing punctuation
+  return found.map(u => u.replace(/[.,;:)]+$/, ''));
 }
 
 let batchRefs = [];
@@ -1000,7 +887,9 @@ async function generateBatch() {
     const url = urls[i];
     fill.style.width = ((i / urls.length) * 100) + '%';
 
-    // Add pending card
+    // Pre-detect type from URL for display
+    const urlTypeHint = inferTypeFromURL(url);
+
     const card = document.createElement('div');
     card.className = 'item-card';
     card.id = 'card-' + i;
@@ -1010,12 +899,15 @@ async function generateBatch() {
 
     try {
       const meta = await fetchMeta(url);
-      const ref = buildRef(meta);
+      const finalType = meta.type || urlTypeHint || 'webpage';
+      const ref = buildRef(meta, 'auto');
       batchRefs.push({ ref, url, key: sortKey(ref) });
+
+      const typeLabel = TYPE_LABELS[finalType] || finalType;
       card.querySelector('.item-status').remove();
-      card.innerHTML += `<div class="item-ref">${ref}</div>`;
+      card.innerHTML += `<span class="type-badge">${typeLabel}</span><div class="item-ref">${ref}</div>`;
       if (meta._workerBlocked) {
-        card.innerHTML += `<div class="item-status" style="margin-top:0.3rem">⚠ School Wi-Fi detected — used fallback. Try at home for best results.</div>`;
+        card.innerHTML += `<div class="item-status" style="margin-top:0.3rem">⚠ Worker unreachable — used fallback</div>`;
       }
     } catch(e) {
       batchRefs.push({ ref: null, url, key: url });
@@ -1027,7 +919,6 @@ async function generateBatch() {
   fill.style.width = '100%';
   setTimeout(() => { wrap.style.display = 'none'; fill.style.width = '0%'; }, 600);
 
-  // Sort alphabetically & build combined list
   batchRefs.sort((a,b) => (a.key > b.key ? 1 : -1));
   const combined = batchRefs.filter(r => r.ref).map(r => `<p class="ref-entry">${r.ref}</p>`).join('');
 
@@ -1055,33 +946,30 @@ async function copyRef(targetId) {
   const container = document.getElementById(targetId).closest('.references-box');
   if (!container) { showToast('Nothing to copy'); return; }
 
-  // Build plain text version (APA-style, no HTML)
-  const plainEntries = [...container.querySelectorAll('.ref-entry')].map(el => el.innerText).join('\n');
+  // Build entry HTML with all styles inline so Word preserves formatting
+  const entryStyle = 'font-family:\'Times New Roman\',Times,serif;font-size:11pt;line-height:2;color:#000;margin:0;padding-left:2em;text-indent:-2em;';
+  const italicStyle = 'font-style:italic;';
+  
+  const entries = [...container.querySelectorAll('.ref-entry')];
+  const entriesHtml = entries.map(el => {
+    // Re-encode italics as inline spans since <em> classes are stripped by Word
+    const inner = el.innerHTML.replace(/<em>/gi, `<span style="${italicStyle}">`).replace(/<\/em>/gi, '</span>');
+    return `<p style="${entryStyle}">${inner}</p>`;
+  }).join('');
+
+  const referencesHtml = `<html><body style="font-family:'Times New Roman',Times,serif;font-size:11pt;color:#000;">` +
+    `<p style="font-family:'Times New Roman',Times,serif;font-size:11pt;font-weight:bold;text-align:center;line-height:2;margin:0;">REFERENCES</p>` +
+    entriesHtml + `</body></html>`;
+
+  const plainEntries = entries.map(el => el.innerText).join('\n');
   const plainText = 'REFERENCES\n\n' + plainEntries;
 
-  // Build RTF for Word compatibility (preserves italic, double-space, hanging indent)
-  // We'll use the ClipboardItem API with both text/plain and text/html
-  const htmlContent = container.innerHTML;
-
-  // Wrap in a styled div for copy
-  const wrapper = document.createElement('div');
-  wrapper.style.fontFamily = 'Times New Roman, Times, serif';
-  wrapper.style.fontSize = '11pt';
-  wrapper.style.lineHeight = '2';
-  wrapper.style.color = '#000';
-  wrapper.innerHTML = htmlContent;
-
   try {
-    const htmlBlob = new Blob([
-      `<html><body><div style="font-family:'Times New Roman',Times,serif;font-size:11pt;line-height:2;color:#000">${htmlContent}</div></body></html>`
-    ], { type: 'text/html' });
-    const textBlob = new Blob([plainText], { type: 'text/plain' });
     await navigator.clipboard.write([
-      new ClipboardItem({ 'text/html': htmlBlob, 'text/plain': textBlob })
+      new ClipboardItem({ 'text/html': new Blob([referencesHtml], { type: 'text/html' }), 'text/plain': new Blob([plainText], { type: 'text/plain' }) })
     ]);
     showToast('Copied! Paste into Word to retain formatting.');
   } catch(e) {
-    // Fallback
     try {
       await navigator.clipboard.writeText(plainText);
       showToast('Copied as plain text.');
@@ -1103,8 +991,6 @@ function showToast(msg) {
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => t.classList.remove('show'), 3000);
 }
-
-// ── INIT ──
 </script>
 </body>
 </html>
